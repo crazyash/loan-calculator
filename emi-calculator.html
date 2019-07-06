@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EMI Calculator</title>
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="script.js"></script>
+
+	<style>
+		#interestrate {
+			width: 90px;
+		}
+
+		#durationYtext,
+		#durationMtext {
+			width: 75px;
+		}
+
+		#durationY {
+			width: 90px;
+		}
+
+		#durationM {
+			width: 60px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Header #Start-->
+	<div id="header">
+		<!-- Site Logo & Text #Start-->
+		<div id="logo" class="logo"></div>
+		<!-- Site Logo & Text #End-->
+		<!-- Navigation Bar #Start-->
+		<div id="topnav" class="topnav">
+			<!-- <a href="Home.html">Home</a> -->
+			<a href="fd-calculator.html">FD Calculator</a>
+			<a href="rd-calculator.html">RD Calculator</a>
+			<a href="sip-calculator.html">SIP Calculator</a>
+			<a class="active" href="emi-calculator.html">EMI Calculator</a>
+			<!-- <a href="Register.html" style="float: right;">Sign Up</a>
+		  <a href="Login.html" style="float: right;">Sign In</a> -->
+		</div>
+		<!-- Navigation Bar #End-->
+	</div>
+	<!-- Header #End-->
+
+	<div id="main" class="graybackground">
+		<div id="left" class="layout"></div>
+		<div id="center" class="layout">
+			<form onsubmit="calculateEMI(); return false;" method="post" autocomplete="off">
+
+				<table align="center">
+					<tr>
+						<td>
+							<p class="labels">Loan Amount(Rs.)</p>
+							<input type="text" id="loanAmount" name="loanAmount" placeholder="Loan Amount"
+								onkeyup="toINR('loanAmount')" required pattern="[0-9,]+" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="labels">Interest Rate(%)</p> <input type="text" id="interestrate"
+								name="interestrate" value="" placeholder="Interest" required
+								pattern="[0-9]*[. ]*[0-9]+" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="labels">Loan Tenure</p> <input type="text" id="durationY" name="durationY"
+								placeholder="Duration" required pattern="[0-9]+" />
+							<input id="durationYtext" type="text" disabled="disabled" placeholder="Year(s)" /> <select
+								id="durationM" name="durationM">
+								<option value="0" selected="selected">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select> <input id="durationMtext" type="text" disabled="disabled"
+								placeholder="Month(s)" />
+						</td>
+					</tr>
+
+					<tr>
+						<td><input type="submit" id="calculate" class="submitMain" name="calculate" value="Calculate" />
+							<input type="reset" id="clear" class="submitMain" name="clear" value="Clear"
+								onclick="clearForm('emiresult');" /></td>
+					</tr>
+
+
+
+				</table>
+				<table align="center">
+					<tr>
+						<td>
+							<p class="results" id="emiresult" hidden="hidden"></p>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="right" class="layout" align="center">
+			<div id="roughwork">
+				<p class="labels">Simple Calculator</p>
+				<form onsubmit="evalExpr('rough'); return false;" method="post">
+					<table>
+						<tr>
+							<td><input type="text" id="rough" name="rough" placeholder="5000*250" style="width: 200px;"
+									required pattern="[0-9]*[. ]*[0-9]+[+-/*][0-9]*[. ]*[0-9]+" /></td>
+							<td><input type="submit" id="evalExp" name="evalExp" value="Check" /></td>
+							<td><input type="reset" id="evalExpR" name="evalExpR" value="Clear" /></td>
+						</tr>
+						<tr>
+							<td>
+								<p id="expResult" hidden="hidden" class="roughResult"></p>
+							</td>
+							<td></td>
+							<td valign="top">
+								<input type="reset" id="evalExpRAll" name="evalExpRAll" value="ClearAll"
+									onclick="clearForm('expResult');" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+	<iframe src="footer.html" id="footer" seamless width="100%" height="100%" style="min-height: 400px;"> </iframe>
+</body>
+
+</html>

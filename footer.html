@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openContent(event, 'fixed_deposit')">Fixed Deposit</button>
+        <button class="tablinks" onclick="openContent(event, 'recurring_deposit')">Recurring Deposit</button>
+        <button class="tablinks" onclick="openContent(event, 'sip')">Systematic Investment Plan</button>
+        <button class="tablinks" onclick="openContent(event, 'emi')">EMI</button>
+    </div>
+
+    <div id="fixed_deposit" class="tabcontent">
+        <p>A fixed deposit (FD) is a financial instrument provided by banks or NBFCs which provides investors a higher
+            rate of interest than a regular savings account, until the given maturity date. It may or may not require
+            the creation of a separate account. It is known as a term deposit or time deposit in Canada, Australia, New
+            Zealand, and the US, and as a bond in the United Kingdom and India.
+            <br /><br /> For a fixed deposit is that the
+            money
+            cannot be withdrawn from the FD as compared to a recurring deposit or a demand deposit before maturity. Some
+            banks may offer additional services to FD holders such as loans against FD certificates at competitive
+            interest rates.
+            <br /><br /> It's important to note that banks may offer lesser interest rates under uncertain
+            economic
+            conditions. The interest rate varies between 4 and 7.50 percent. The tenure of an FD can vary from 7, 15
+            or 45 days to 1.5 years and can be as high as 10 years. These investments are safer than Post Office
+            Schemes as they are covered by the Deposit Insurance and Credit Guarantee Corporation (DICGC).
+            <br /> <br /> <span style="font-family: 'Courier New', Courier, monospace; font-size: 13px;">Source:
+                <a href=https://en.wikipedia.org/wiki/Fixed_deposit" target="_blank">wikipedia</a></span>
+        </p>
+    </div>
+
+    <div id="recurring_deposit" class="tabcontent">
+        <p>A recurring deposit is a special kind of term deposit offered by banks in India which help people with
+            regular incomes to deposit a fixed amount every month into their recurring deposit account and earn interest
+            at the rate applicable to fixed deposits. It is similar to making fixed deposits of a certain amount in
+            monthly installments. This deposit matures on a specific date in the future along with all the deposits made
+            every month. Recurring deposit schemes allow customers an opportunity to build up their savings through
+            regular monthly deposits of a fixed sum over a fixed period of time. The minimum period of a recurring
+            deposit is six months and the maximum is ten years.
+            <br /><br />
+            The recurring deposit can be funded by standing instructions which are the instructions by the customer to
+            the bank to withdraw a certain sum of money from his savings/current account and debit to the recurring
+            deposit account.
+            <br /><br />
+            When the recurring deposit account is opened, the maturity value is indicated to the customer assuming that
+            the monthly installments will be paid regularly on due dates. If any installment is delayed, the interest
+            payable in the account will be reduced and will not be sufficient to reach the maturity value. Therefore,
+            the difference in interest will be deducted from the maturity value as a penalty. The rate of penalty will
+            be fixed upfront. Interest is compounded on quarterly basis in recurring deposits.
+            <br /><br />
+            One can avail loans against the collateral of a recurring deposit up to 80 to 90% of the deposit value.
+
+            <br /><br />
+            <span style="font-family: 'Courier New', Courier, monospace; font-size: 13px;">Source:
+                <a href="https://en.wikipedia.org/wiki/Recurring_deposit" target="_blank">wikipedia</a></span>
+        </p>
+    </div>
+
+    <div id="sip" class="tabcontent">
+
+        <p>A systematic investment plan (SIP) is an investment vehicle offered by mutual funds to investors, allowing
+            them to invest small amounts periodically instead of lump sums. The frequency of investment is usually
+            weekly, monthly or quarterly.
+            <br /><br />
+            In SIPs, a fixed amount of money is debited by the investors in bank accounts periodically and invested in a
+            specified mutual fund. The investor is allocated a number of units according to the current Net asset value.
+            Every time a sum is invested, more units are added to the investors account.
+            <br /><br />
+            The strategy claims to free the investors from speculating in volatile markets by dollar cost averaging. As
+            the investor is getting more units when the price is low and fewer units when the price is high, in the long
+            run, the average cost per unit is supposed to be lower.
+            <br /><br />
+            SIP claims to encourage disciplined investment. SIPs are flexible; the investors may stop investing a plan
+            anytime or may choose to increase or decrease the investment amount. SIP is usually recommended to retail
+            investors who do not have the resources to pursue the active investment.
+            <br /><br />
+            <span style="font-family: 'Courier New', Courier, monospace; font-size: 13px;">Source:
+                <a href="https://en.wikipedia.org/wiki/Systematic_Investment_Plan" target="_blank">wikipedia</a></span>
+        </p>
+    </div>
+    <div id="emi" class="tabcontent">
+
+        <p>
+            An EMI or Equated Monthly Installment is defined by Investopedia as "A fixed payment amount made by a
+            borrower to a lender at a specified date each calendar month. Equated monthly installments are used to pay
+            off both interest and principal each month, so that over a specified number of years, the loan is fully paid
+            off along with interest."
+            <br /><br />
+            It further explains that, with most common types of loans, such as real estate mortgages, the borrower makes
+            fixed periodic payments to the lender over the course of several years with the goal of retiring the loan.
+            EMIs differ from variable payment plans, in which the borrower is able to pay higher payment amounts at his
+            or her discretion. In EMI plans, borrowers are mostly only allowed one fixed payment amount each month.
+            <br /><br />
+            The benefit of an EMI for borrowers is that they know precisely how much money they will need to pay toward
+            their loan each month, making the personal budgeting process easier.
+            <br /><br />
+            <span style="font-family: 'Courier New', Courier, monospace; font-size: 13px;">Source:
+                <a href="https://en.wikipedia.org/wiki/Equated_monthly_installment" target="_blank">wikipedia</a></span>
+        </p>
+    </div>
+    <script>
+
+        document.getElementsByClassName("tablinks")[0].className += " active";
+        document.getElementById('fixed_deposit').style.display = "block";
+
+        function openContent(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
