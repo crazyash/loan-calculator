@@ -14,7 +14,6 @@ body {
 }
 
 .topnav a {
-	float: left;
 	display: block;
 	color: #2c3e50;
 	text-align: center;
@@ -115,7 +114,13 @@ layout #right{
 }
 
 @media only screen and (max-width: 1150px) {
-  #roughwork, #footer { display: none; }
+  #roughwork, #left, #right { display: none; }
+  #main { height: 400px; width: 100%; }
+  #center {margin: auto; width: 100%; text-align: center; }
+}
+
+#topnav{
+	width: 100%; 
 }
 
 .submitMain{
