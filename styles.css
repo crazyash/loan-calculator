@@ -207,3 +207,21 @@ select {
 	font-size: 14px;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
+#footer{
+	background-color: #4CAF50;
+	color: white;
+	text-align: center;  
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 13px;
+	position: fixed;
+	/* width: 100%; */
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+}
+
+#footer a{
+	color: white;
+}
